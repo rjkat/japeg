@@ -1,0 +1,1619 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"COMP",
+				"COMPONENT_ID_CR	component_id"
+			],
+			[
+				"BIT",
+				"BITMAP_CHANNEL_R	macro"
+			],
+			[
+				"COM",
+				"COMPONENT_ID_CR	component_id"
+			],
+			[
+				"s",
+				"sampling_factor_horizontal	uint8_t"
+			],
+			[
+				"sa",
+				"sampling_factor_vertical	uint8_t"
+			],
+			[
+				"JPEG_CH",
+				"JPEG_CHUNK_SIDE_LENGTH	macro"
+			],
+			[
+				"f",
+				"frame	frame *"
+			],
+			[
+				"comp",
+				"component	typedef"
+			],
+			[
+				"high",
+				"highest_horizontal_sampling_factor	uint8_t"
+			],
+			[
+				"num",
+				"num_cols	int"
+			],
+			[
+				"jp",
+				"jpeg_to_bitmap(const jpeg *j, const char *filename)	void"
+			],
+			[
+				"hig",
+				"highest_horizontal_sampling_factor	uint8_t"
+			],
+			[
+				"hi",
+				"highest_vertical_sampling_factor	uint8_t"
+			],
+			[
+				"BITM",
+				"BITMAP_NUM_CHANNELS	macro"
+			],
+			[
+				"n",
+				"num_lines	uint16_t"
+			],
+			[
+				"SEEK",
+				"SEEK_SET	macro"
+			],
+			[
+				"com",
+				"component	typedef"
+			],
+			[
+				"b",
+				"bytes_read	size_t"
+			],
+			[
+				"data",
+				"data	uint8_t *"
+			],
+			[
+				"d",
+				"data_size_bytes	size_t"
+			],
+			[
+				"h",
+				"has_restart_interval	int"
+			],
+			[
+				"JPEG_STR",
+				"JPEG_STREAM_STATE_OUT_OF_DATA	macro"
+			],
+			[
+				"jpeg_st",
+				"jpeg_stream_get_state(jpeg_stream *stream)	int"
+			],
+			[
+				"JPEG_S",
+				"JPEG_STREAM_STATE_OUT_OF_DATA	macro"
+			],
+			[
+				"JPEG_STRE",
+				"JPEG_STREAM_STATE_MORE_DATA	macro"
+			],
+			[
+				"da",
+				"data	uint8_t *"
+			],
+			[
+				"COMPO",
+				"COMPONENT_ID_CR	component_id"
+			],
+			[
+				"bit",
+				"bitmap_channel	int"
+			],
+			[
+				"compo",
+				"component_id	typedef"
+			],
+			[
+				"chu",
+				"chunk	int16_t[]"
+			],
+			[
+				"JPEG_C",
+				"JPEG_CHUNK_SIDE_LENGTH	macro"
+			],
+			[
+				"nu",
+				"num_cols	size_t"
+			],
+			[
+				"pad",
+				"padded_cols	size_t"
+			],
+			[
+				"pa",
+				"padded_cols	size_t"
+			],
+			[
+				"num_",
+				"num_rows	size_t"
+			],
+			[
+				"JPEG_CHU",
+				"JPEG_CHUNK_SIDE_LENGTH	macro"
+			],
+			[
+				"JPEG_CHUN",
+				"JPEG_CHUNK_SIDE_LENGTH	macro"
+			],
+			[
+				"ac",
+				"ac_coeff	int16_t"
+			],
+			[
+				"JPEG",
+				"JPEG_CHUNK_NUM_SAMPLES	macro"
+			],
+			[
+				"current",
+				"current_node	hnode   *"
+			],
+			[
+				"HTAB",
+				"HTABLE_END_OF_BLOCK	macro"
+			],
+			[
+				"JP",
+				"JPEG_CHUNK_NUM_SAMPLES	macro"
+			],
+			[
+				"t",
+				"type	htable_type"
+			],
+			[
+				"HTABLE_TYPE",
+				"HTABLE_TYPE_DC	htable_type"
+			],
+			[
+				"dat",
+				"data_size_bytes	size_t"
+			],
+			[
+				"compon",
+				"component	typedef"
+			],
+			[
+				"read_",
+				"read_data_unit(const jpeg *j, unsigned int c)	int"
+			],
+			[
+				"JPEG_SEG",
+				"JPEG_SEGMENT_SIZE_LENGTH_BYTES	macro"
+			],
+			[
+				"sca",
+				"scan_start_s	struct"
+			],
+			[
+				"HTABLE",
+				"HTABLE_OK	macro"
+			],
+			[
+				"htabl",
+				"htable_id	typedef"
+			],
+			[
+				"dc",
+				"dc_coeff	int16_t"
+			],
+			[
+				"HTABLE_TYP",
+				"HTABLE_TYPE_DC	htable_type"
+			],
+			[
+				"componen",
+				"component_type	typedef"
+			],
+			[
+				"HTABLE_E",
+				"HTABLE_END_OF_BLOCK	macro"
+			],
+			[
+				"HTABLE_ID_",
+				"HTABLE_ID_LUMINANCE	htable_id"
+			],
+			[
+				"HTABLE_ID",
+				"HTABLE_ID_CHROMINANCE	htable_id"
+			],
+			[
+				"int",
+				"int16_t"
+			],
+			[
+				"uint",
+				"uint16_t"
+			],
+			[
+				"JPEG_M",
+				"JPEG_MARKER_SOS"
+			],
+			[
+				"JPEG_MA",
+				"JPEG_MARKER_SOS"
+			],
+			[
+				"jpeg",
+				"jpeg_block"
+			],
+			[
+				"zigz",
+				"zigzag_created"
+			],
+			[
+				"zi",
+				"zigzag_created"
+			],
+			[
+				"QTA",
+				"QTABLE_NUM_ELEMENTS"
+			],
+			[
+				"NUM",
+				"QTABLE_NUM_ELEMENTS"
+			],
+			[
+				"size",
+				"size_t"
+			],
+			[
+				"QTABLE_",
+				"QTABLE_NUM_ELEMENTS"
+			],
+			[
+				"QTABLE",
+				"QTABLE_SIDE_LENGTH"
+			],
+			[
+				"byte",
+				"bytes_remaining"
+			],
+			[
+				"block",
+				"block_data"
+			],
+			[
+				"nuM",
+				"num_qtables"
+			],
+			[
+				"JPEG_",
+				"JPEG_MAX_HTABLES"
+			],
+			[
+				"SCAN",
+				"SCAN_HEADER_BYTES_PER_COMPONENT"
+			],
+			[
+				"BL",
+				"JPEG_BLOCK_SIZE_LENGTH_BYTES"
+			],
+			[
+				"pr",
+				"Precision"
+			],
+			[
+				"c",
+				"COMPONENT_SIZE_BYTES"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"un",
+				"uint8_t"
+			],
+			[
+				"FRA",
+				"FRAME_PRECISION_BITS"
+			],
+			[
+				"QTAB",
+				"QTABLE_PRECISION_16BIT"
+			],
+			[
+				"val",
+				"values_8bit"
+			],
+			[
+				"QT",
+				"QTABLE_PRECISION_8BIT"
+			],
+			[
+				"table",
+				"table_id"
+			],
+			[
+				"QTABLE_PRE",
+				"QTABLE_PRECISION_8BIT"
+			],
+			[
+				"ui",
+				"uint8_t"
+			],
+			[
+				"first",
+				"first_block"
+			],
+			[
+				"la",
+				"last_block"
+			],
+			[
+				"head",
+				"header_length"
+			],
+			[
+				"he",
+				"header_length"
+			],
+			[
+				"jpeg_block",
+				"jpeg_block_destroy"
+			],
+			[
+				"jpeg_",
+				"jpeg_destroy"
+			],
+			[
+				"JPE",
+				"JPEG_MARKER_IMAGE_START"
+			],
+			[
+				"jpeg_d",
+				"jpeg_decode_error"
+			],
+			[
+				"JPEG_MARKER",
+				"JPEG_MARKER_FIRST_BYTE"
+			],
+			[
+				"out",
+				"out_file_size"
+			],
+			[
+				"file",
+				"file_size"
+			],
+			[
+				"ARG_",
+				"ARG_OUTPUT_FILE"
+			],
+			[
+				"to",
+				"toGregorian"
+			],
+			[
+				"do",
+				"do_phone_records"
+			],
+			[
+				"a",
+				"add_phone_record"
+			],
+			[
+				"cal",
+				"cal_file"
+			],
+			[
+				"do_",
+				"do_bank"
+			],
+			[
+				"p",
+				"do_phone"
+			],
+			[
+				"csv",
+				"csv_file"
+			],
+			[
+				"rec",
+				"record_type"
+			],
+			[
+				"ad",
+				"add_bank_record"
+			],
+			[
+				"add",
+				"add_bank_record"
+			],
+			[
+				"pars",
+				"parseLine"
+			],
+			[
+				"Rec",
+				"RecordType"
+			],
+			[
+				"xs",
+				"xorList"
+			],
+			[
+				"de",
+				"depth"
+			],
+			[
+				"cur",
+				"current"
+			],
+			[
+				"B",
+				"BFF_list"
+			],
+			[
+				"N",
+				"NOT_VISITED"
+			],
+			[
+				"user",
+				"user_ID"
+			],
+			[
+				"bes",
+				"best_char"
+			],
+			[
+				"best",
+				"best_chars"
+			],
+			[
+				"candi",
+				"candidate_3"
+			],
+			[
+				"tot",
+				"total_packets"
+			],
+			[
+				"total",
+				"total_runtime"
+			],
+			[
+				"wait",
+				"wait_time_ms"
+			],
+			[
+				"wai",
+				"wait_time_s"
+			],
+			[
+				"wa",
+				"wait_time_ms"
+			],
+			[
+				"char",
+				"char_score"
+			],
+			[
+				"pack",
+				"packets_sent"
+			],
+			[
+				"WAI",
+				"WAIT_TIME_S"
+			],
+			[
+				"NU",
+				"NUM_CHARS_TO_TRY"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "convert.c",
+			"settings":
+			{
+				"buffer_size": 9249,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bitmap.c",
+			"settings":
+			{
+				"buffer_size": 6870,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bitmap.h",
+			"settings":
+			{
+				"buffer_size": 635,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jpeg_segment.h",
+			"settings":
+			{
+				"buffer_size": 1088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jpeg_internal.h",
+			"settings":
+			{
+				"buffer_size": 783,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jpeg.c",
+			"settings":
+			{
+				"buffer_size": 6757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jpeg.h",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "convert.h",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "frame.h",
+			"settings":
+			{
+				"buffer_size": 1011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "frame.c",
+			"settings":
+			{
+				"buffer_size": 2121,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.c",
+			"settings":
+			{
+				"buffer_size": 600,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 307.0,
+		"selected_items":
+		[
+			[
+				"latex",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"type",
+				"SublimeHaskell: Insert type"
+			],
+			[
+				"inser",
+				"SublimeHaskell: Insert type"
+			],
+			[
+				"show",
+				"SublimeHaskell: Show type"
+			],
+			[
+				"show t",
+				"SublimeHaskell: Show type"
+			],
+			[
+				"insert ",
+				"SublimeHaskell: Insert type"
+			],
+			[
+				"insert t",
+				"SublimeHaskell: Insert type"
+			],
+			[
+				"sub",
+				"SublimeHaskell: Insert type"
+			],
+			[
+				"haske",
+				"SublimeHaskell: Show type"
+			],
+			[
+				"haskell",
+				"SublimeHaskell: Check"
+			],
+			[
+				"sublime",
+				"SublimeHaskell: Show type"
+			],
+			[
+				"subli",
+				"SublimeHaskell: Check & Lint"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"P",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"brack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"Pacl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ro/japeg/banana.bmp",
+		"/Users/ro/japeg/bitmap_internal.h",
+		"/Users/ro/japeg/sydney.jpg",
+		"/Users/ro/japeg/sydney.bmp",
+		"/Users/ro/japeg/banana.jpg",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/math.h",
+		"/Users/ro/japeg/htable.c",
+		"/Users/ro/japeg/scan_start.c",
+		"/Users/ro/japeg/convert.c",
+		"/Users/ro/japeg/htable.h",
+		"/Users/ro/japeg/scan_start.h",
+		"/Users/ro/japeg/jpeg_stream.h",
+		"/Users/ro/japeg/jpeg_segment.c",
+		"/Users/ro/japeg/jpeg_internal.h",
+		"/Users/ro/japeg/jpeg.c",
+		"/Users/ro/japeg/jpeg_segment.h",
+		"/Users/ro/japeg/jpeg_stream.c",
+		"/Users/ro/japeg/htree.h",
+		"/Users/ro/japeg/htree.c",
+		"/Users/ro/japeg/Makefile",
+		"/Users/ro/japeg/qtable.c",
+		"/Users/ro/japeg/test.c",
+		"/Users/ro/japeg/.hg/hgrc",
+		"/Users/ro/japeg/restart.c",
+		"/Users/ro/japeg/restart.h",
+		"/Users/ro/japeg/frame.h",
+		"/Users/ro/japeg/bitmap.h",
+		"/Users/ro/japeg/.hg/.hgrc",
+		"/Users/ro/japeg/.hgrc",
+		"/Users/ro/japeg/main.c",
+		"/Users/ro/japeg/frame.c",
+		"/Users/ro/japeg/dct.c",
+		"/Users/ro/japeg/bitmap.c",
+		"/Users/ro/japeg/dct.h",
+		"/Users/ro/japeg/jpeg.h",
+		"/Users/ro/japeg/qtable.h",
+		"/Users/ro/japeg/japeg.sublime-project",
+		"/Users/ro/Library/Application Support/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/Users/ro/thesis/publication/draft.tex",
+		"/Users/ro/japeg/huffman_decode.h",
+		"/Users/ro/japeg/huffman_decode.c",
+		"/Users/ro/japeg/emma.jpeg",
+		"/Users/ro/japeg/jpeg_block.c",
+		"/Users/ro/japeg/jpeg_block.h",
+		"/Users/ro/japeg/scan.h",
+		"/Users/ro/japeg/scan.c",
+		"/Users/ro/japeg/japeg.c",
+		"/Users/ro/japeg/dqt.c",
+		"/Users/ro/Documents/workspace/atlassian/src/iteration/Plus.java",
+		"/Users/ro/Documents/workspace/atlassian/src/iteration/Main.java",
+		"/Users/ro/Documents/workspace/atlassian/src/iteration/Folder.java",
+		"/Users/ro/Main.java",
+		"/Users/ro/Documents/workspace/atlassian/src/flatten/MyFlattenTree.java",
+		"/Users/ro/Documents/workspace/atlassian/src/findarray/MyFindArray.java",
+		"/Users/ro/japeg/japeg",
+		"/Users/ro/japeg/fcd14495p.pdf",
+		"/Users/ro/input.txt",
+		"/Users/ro/integrated_research_small.txt",
+		"/Users/ro/integrated_research.txt",
+		"/Users/ro/Desktop/leapYear/leapYear/leapYear.c",
+		"/Users/ro/Dropbox/resume/cover_letters/dolby.tex",
+		"/Users/ro/cover_letter.py",
+		"/Users/ro/Dropbox/uni/elec4622/ass3/ass3/ass3/io_bmp/io_bmp.cpp",
+		"/Users/ro/Dropbox/uni/it/report.tex",
+		"/Users/ro/blah.c",
+		"/Users/ro/f04cb41f154db2f05a4a/base64.c",
+		"/Users/ro/Library/Application Support/Sublime Text 2/Packages/User/Plain text.sublime-settings",
+		"/Users/ro/compilerbug.c",
+		"/Users/ro/Library/Application Support/Sublime Text 2/Packages/Alignment/Default (OSX).sublime-keymap",
+		"/Users/ro/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/ro/thesis/publication/comments.txt",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/ass3.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/abstract.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/quote.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/cover.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/appendices.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/glossary.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/context.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/research.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/risks.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/offering.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/economics.tex",
+		"/Users/ro/thesis/beast/real.tex",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/rowan_latex/ass3-blx.bib",
+		"/Users/ro/Dropbox/uni/elec4445/ass3/RowanContribution.tex",
+		"/Volumes/untitled/$/key.txt",
+		"/Users/ro/thesis/beast/characterisation.tex",
+		"/Users/ro/thesis/beast/evaluation.tex",
+		"/Users/ro/thesis/beast/thesis.tex",
+		"/Users/ro/thesis/beast/dna.tex",
+		"/Users/ro/thesis/beast/code/ml_estimate.m",
+		"/Users/ro/thesis/beast/appendix.tex",
+		"/Users/ro/thesis/beast/conclusion.tex",
+		"/Users/ro/thesis/beast/notation.tex",
+		"/Users/ro/thesis/beast/plots/plot_bias.tex",
+		"/Users/ro/thesis/beast/cr_bound.tex",
+		"/Users/ro/thesis/beast/signal_noise.tex",
+		"/Users/ro/thesis/beast/cr_bound.aux",
+		"/Users/ro/thesis/beast/references.bib",
+		"/Users/ro/thesis/beast/plots/bias_prof_hybrid_N1000.tex",
+		"/Users/ro/thesis/beast/plots/plot.tex",
+		"/Users/ro/thesis/beast/plots/correctness_p3_N100_100trials.txt",
+		"/Users/ro/thesis/beast/plots/correctness_p10_N500_100trials.txt",
+		"/Users/ro/thesis/beast/abbrevs.tex",
+		"/Users/ro/thesis/beast/thesis_defs.sty",
+		"/Users/ro/thesis/beast/plots/correctness_new.txt",
+		"/Users/ro/thesis/beast/plots/cr_bound_N300_p15_200trials_vary_g.txt",
+		"/Users/ro/thesis/beast/plots/bias.tex",
+		"/Users/ro/thesis/code/my_ml/my_ml.c",
+		"/Users/ro/thesis/beast/code/ml.c",
+		"/Users/ro/thesis/beast/plots/correctness_ml_N300_gamma0.25_vary_p.txt",
+		"/Users/ro/thesis/beast/plots/bias_ml_N300_gamma0.25_vary_p.txt",
+		"/Users/ro/thesis/beast/plots/cr_bound_N300_p15_100trials_vary_g.txt",
+		"/Users/ro/thesis/code/my_ml/out.txt",
+		"/Users/ro/thesis/beast/plots/cr_bound_p15_gamma0.3_vary_n.txt",
+		"/Users/ro/thesis/beast/plots/cr_bound_N300_gamma0.3_100trials.txt",
+		"/Users/ro/thesis/beast/plots/cr_bound_N100_gamma0.3_100trials.txt",
+		"/Users/ro/thesis/beast/cachegrind_fast.txt",
+		"/Users/ro/thesis/beast/cachegrind_slow.txt",
+		"/Users/ro/thesis/beast/cover.tex",
+		"/Users/ro/thesis/beast/acknowledgements.tex",
+		"/Users/ro/thesis/beast/plots/correctness_mlfast_p21_N1000_50trials.txt",
+		"/Users/ro/thesis/beast/plots/correctness_p21_N1000_50trials.txt",
+		"/Users/ro/thesis/beast/plots/correctness_p21_N1050_50trials.txt",
+		"/Users/ro/thesis/beast/plots/correctness_p7_N70_50trials.txt",
+		"/Users/ro/thesis/beast/figures/thesis-figure12.log",
+		"/Users/ro/thesis/beast/abstract.tex",
+		"/Users/ro/thesis/beast/introduction.tex"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"*.h",
+			"*.c",
+			"*.h",
+			"",
+			"offering.tex",
+			"economics.tex",
+			"<open files>",
+			"",
+			"correctness_ml.txt",
+			"wordlist.tex",
+			"",
+			"nicknames.txt",
+			"AE001365.py",
+			"summary.tex",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"vertical",
+			"horizontal",
+			"highest_sampling_factor",
+			" (-1)",
+			"jpeg_destroy",
+			"read_file",
+			"jpeg_destroy",
+			"read_file",
+			"ff",
+			"ffda",
+			"ff",
+			"ff00 ffd",
+			"ff00 ff",
+			"ff00",
+			"read_mcu",
+			"qtable_create",
+			"restart",
+			"blocks_read",
+			"huffman_bits_read",
+			"jpeg_stream",
+			"typedef struct jpeg_stream",
+			"swap",
+			"sampling_factor_horizontal",
+			"(component_id)",
+			"component_id",
+			"v_",
+			"chunk",
+			"v_scaling_factor",
+			"col ",
+			"row ",
+			"row",
+			"JPEG_CHUNK_NUM_SAMPLES",
+			"ceil_cols",
+			"floor_cols",
+			"b->num_cols",
+			"padded_rows",
+			"padded_cols",
+			"b->num_cols",
+			"delta",
+			"padded_column_length",
+			"fclose(fp);",
+			"read_word",
+			"MATH_PI",
+			"total_bits",
+			"j->frame->components[c].",
+			"type",
+			"component_type",
+			"COMPONENT_TYPE",
+			"COMPONENT_TYPE_Y",
+			"htables",
+			"extra",
+			"component",
+			"frame_create",
+			"sampling_factor",
+			"uint16_t",
+			"code_bits",
+			"result",
+			"HTABLE_TYPE",
+			"EXECUTABLE",
+			" = ",
+			"\\subsubsection",
+			"sendpadding",
+			"BMP_PADDING",
+			"SEGMENT",
+			"JPEG_BLOCK",
+			"jpeg_block",
+			"QTABLE_NUM_ELEMENTS",
+			"HTABLE_H",
+			"JPEG",
+			"ff",
+			"SCAN_HEADER",
+			"scan_start_HEADER",
+			"SCAN",
+			"scan",
+			"SCAN",
+			"scan",
+			"SCAN",
+			"scan",
+			"SCAN",
+			"scan",
+			"last_block",
+			"int",
+			"00",
+			"zigzag[i]",
+			"8",
+			"64",
+			"qt",
+			"i + ",
+			"unsigned int",
+			"current_num_qtables",
+			"num_qtables",
+			"block_data_size",
+			"block->data",
+			"table->",
+			" =  block->data[i]       & 0xF;\n   = ",
+			"= ",
+			"uint8_t ",
+			"frame",
+			"sos",
+			"selector",
+			"FRAME",
+			"ffdb",
+			"first_block",
+			"last_block",
+			"JPEG_MARKER_SOS",
+			"read_next",
+			"FRAME",
+			"QTABLE_METADATA_SIZE_BYTES",
+			"c->",
+			"c",
+			"COMPONENT_SIZE_BYTES",
+			"SIZE",
+			"class",
+			"CLASS",
+			"ff",
+			"db",
+			"frame->",
+			"FRAME",
+			"frame",
+			"frame->precision",
+			"f.",
+			"j",
+			"frame.",
+			"DQT",
+			"jpeg",
+			"ffc4",
+			"get_next_block",
+			"jpeg"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"JPEG_SEGMENT",
+			"jpeg_segment",
+			"\\\\section{$1}",
+			"\\\\subsubsection{$3}",
+			"\\\\subsection{$3}",
+			"\\\\subsection{$2}",
+			"\\\\section{$2}",
+			"\\\\section{$1}",
+			"\\section{$2}",
+			"$10",
+			"$1 0",
+			"($10",
+			"$10",
+			"\\\\item \\\\textbf{$1} --",
+			"\\\\item \\textbf{$1} --",
+			"\\\\textbf{$1}",
+			"\\\\excerpt{$1}",
+			"\\excerpt{$1}",
+			"``$1''",
+			"^\\U$1\\E$2",
+			"\\U$1\\E\\$2",
+			"",
+			"$1\\n",
+			"G",
+			"C",
+			"T",
+			"A",
+			"",
+			"A",
+			" -- ",
+			"\\n",
+			"{\\\\tt \\1}",
+			"{\\\\tt #1}",
+			"{\\\\tt $1}",
+			"micro-controller",
+			"Theremin",
+			"digitis",
+			"``$1''",
+			"Theremin"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "convert.c",
+					"settings":
+					{
+						"buffer_size": 9249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5588,
+								5588
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2671.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "bitmap.c",
+					"settings":
+					{
+						"buffer_size": 6870,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6301,
+								6301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3712.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bitmap.h",
+					"settings":
+					{
+						"buffer_size": 635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								565,
+								565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "jpeg_segment.h",
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "jpeg_internal.h",
+					"settings":
+					{
+						"buffer_size": 783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								324,
+								324
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "jpeg.c",
+					"settings":
+					{
+						"buffer_size": 6757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "jpeg.h",
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								136,
+								136
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "convert.h",
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "frame.h",
+					"settings":
+					{
+						"buffer_size": 1011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								651,
+								651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 147.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "frame.c",
+					"settings":
+					{
+						"buffer_size": 2121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1506,
+								1506
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 641.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "main.c",
+					"settings":
+					{
+						"buffer_size": 600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								600,
+								600
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 136.0
+	},
+	"output.exec":
+	{
+		"height": 151.0
+	},
+	"output.haskell_error_checker":
+	{
+		"height": 108.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 31.0
+	},
+	"output.haskell_type_panel":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ht",
+				"htable.h"
+			],
+			[
+				"h",
+				"htree.c"
+			],
+			[
+				"htr",
+				"htree.c"
+			],
+			[
+				"htre",
+				"htree.c"
+			],
+			[
+				"htree",
+				"htree.c"
+			],
+			[
+				"qtab",
+				"qtable.c"
+			],
+			[
+				"dct.",
+				"dct.h"
+			],
+			[
+				"bit",
+				"bitmap_internal.h"
+			],
+			[
+				"scan",
+				"scan_start.c"
+			],
+			[
+				"jpeg_in",
+				"jpeg_internal.h"
+			],
+			[
+				"htabl",
+				"htable.h"
+			],
+			[
+				"htable.",
+				"htable.h"
+			],
+			[
+				"conv",
+				"convert.c"
+			],
+			[
+				"htable.c",
+				"htable.c"
+			],
+			[
+				"jpeg",
+				"jpeg.c"
+			],
+			[
+				"qta",
+				"qtable.h"
+			],
+			[
+				"fra",
+				"frame.h"
+			],
+			[
+				"des",
+				"report/description.tex"
+			],
+			[
+				"bu",
+				"report/business.tex"
+			],
+			[
+				"bus",
+				"report/business.aux"
+			],
+			[
+				"re",
+				"report/report.tex"
+			],
+			[
+				"plan",
+				"plan.tex"
+			],
+			[
+				"pro",
+				"profit.tex"
+			],
+			[
+				"intro",
+				"introduction.tex"
+			],
+			[
+				"pub",
+				"pubs.bib"
+			],
+			[
+				"con",
+				"conclusion.tex"
+			],
+			[
+				"mark",
+				"market.tex"
+			],
+			[
+				"s",
+				"summary.tex"
+			],
+			[
+				"in",
+				"introduction.tex"
+			],
+			[
+				"pla",
+				"plan.tex"
+			],
+			[
+				"app",
+				"appendix.tex"
+			],
+			[
+				"pubs",
+				"pubs.bib"
+			],
+			[
+				"design",
+				"design.tex"
+			],
+			[
+				"int",
+				"introduction.tex"
+			],
+			[
+				"de",
+				"design.tex"
+			],
+			[
+				"pr",
+				"proposal.tex"
+			],
+			[
+				"p",
+				"proposal.tex"
+			],
+			[
+				"prop",
+				"proposal.tex"
+			],
+			[
+				"",
+				"conclusion.tex"
+			],
+			[
+				"ap",
+				"appendix.tex"
+			],
+			[
+				"mar",
+				"market.tex"
+			],
+			[
+				"proposal.te",
+				"proposal.tex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true
+}
