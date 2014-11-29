@@ -1,4 +1,4 @@
 japeg
 =====
 
-a simple c japeg decoder
+a simple c jpeg decoder
