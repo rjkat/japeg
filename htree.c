@@ -11,7 +11,7 @@ typedef struct hnode_s hnode;
 struct hnode_s {
    int is_leaf;
    union {
-      unsigned char code;
+      unsigned int code;
       hnode *children[HTREE_NUM_BRANCHES];
    };
 };
@@ -22,7 +22,7 @@ struct htree_s {
    hnode *root;
 };
 
-static hnode *make_leaf_node(unsigned char code) {
+static hnode *make_leaf_node(unsigned int code) {
    hnode *new = calloc(1, sizeof(hnode));
    assert(new);
    new->is_leaf = 1;
@@ -36,7 +36,7 @@ static hnode *make_node(void) {
    return new;
 }
 
-static int htree_add_code(hnode *parent, size_t depth, size_t string_length, unsigned char code) {
+static int htree_add_code(hnode *parent, size_t depth, size_t string_length, unsigned int code) {
    /* If we have hit the end of the tree, return */
    if (parent == NULL || parent->is_leaf) {
       return 1;
