@@ -6,14 +6,14 @@
 static void advance_one_byte(jpeg_stream *stream);
 
 struct jpeg_stream_s {
-   uint8_t *data;
+   unsigned char *data;
    size_t   data_size_bytes;  
    size_t   bytes_read;
    size_t   bit_offset;
 };
 
 jpeg_stream *jpeg_stream_create(size_t  data_size_bytes
-                               ,uint8_t *data
+                               ,unsigned char *data
                                ) {
    jpeg_stream *s = malloc(sizeof(jpeg_stream));
    assert(s);
@@ -24,8 +24,8 @@ jpeg_stream *jpeg_stream_create(size_t  data_size_bytes
    return s;
 }
 
-uint8_t jpeg_stream_get_next_bit(jpeg_stream *stream) {
-   uint8_t next_bit = !!(stream->data[stream->bytes_read] & (1 << (7 - stream->bit_offset)));
+unsigned char jpeg_stream_get_next_bit(jpeg_stream *stream) {
+   unsigned char next_bit = !!(stream->data[stream->bytes_read] & (1 << (7 - stream->bit_offset)));
    stream->bit_offset += 1;
    if (stream->bit_offset == 8) {
       advance_one_byte(stream);

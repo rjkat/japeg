@@ -1,4 +1,3 @@
-#include <stdint.h>
 #include <assert.h>
 #include <stdio.h>
 #include "jpeg_internal.h"
@@ -19,10 +18,7 @@ typedef enum {
 struct qtable_s {
    qtable_precision precision;
    unsigned int id;
-   union {
-      uint8_t  values_8bit [JPEG_CHUNK_NUM_SAMPLES];
-      uint16_t values_16bit[JPEG_CHUNK_NUM_SAMPLES];
-   } elements;
+   unsigned int values[JPEG_CHUNK_NUM_SAMPLES];
    size_t zigzag[JPEG_CHUNK_NUM_SAMPLES];
 };
 
@@ -47,7 +43,7 @@ static void create_zigzag(size_t zigzag[JPEG_CHUNK_NUM_SAMPLES]) {
    fill_elements(zigzag, 1);
 }
 
-static qtable *qtable_create_internal(uint8_t *block_data
+static qtable *qtable_create_internal(unsigned char *block_data
                                      ,size_t  *bytes_remaining) {
    qtable *table;
    unsigned char precision;
@@ -85,24 +81,19 @@ static qtable *qtable_create_internal(uint8_t *block_data
    size_t i;
    for (i = 0; i < JPEG_CHUNK_NUM_SAMPLES; i++) {
       if (table->precision == QTABLE_PRECISION_8BIT) {
-         table->elements.values_8bit[i] = block_data[QTABLE_METADATA_LENGTH_BYTES + i];
+         table->values[i] = block_data[QTABLE_METADATA_LENGTH_BYTES + i];
       } else {
-         table->elements.values_16bit[i] = read_word(&block_data[QTABLE_METADATA_LENGTH_BYTES + 2*i]);
+         table->values[i] = read_word(&block_data[QTABLE_METADATA_LENGTH_BYTES + 2*i]);
       }
    }
    return table;
 }
 
-void qtable_dequantise(qtable *table, int16_t chunk[JPEG_CHUNK_NUM_SAMPLES]) {
+void qtable_dequantise(qtable *table, int chunk[JPEG_CHUNK_NUM_SAMPLES]) {
    size_t i;
-   int16_t chunk_copy[JPEG_CHUNK_NUM_SAMPLES];
+   int chunk_copy[JPEG_CHUNK_NUM_SAMPLES];
    for (i = 0; i < JPEG_CHUNK_NUM_SAMPLES; i++) {
-      chunk_copy[i] = chunk[i];
-      if (table->precision == QTABLE_PRECISION_8BIT) {
-         chunk_copy[i] *= table->elements.values_8bit[i];
-      } else {
-         chunk_copy[i] *= table->elements.values_16bit[i];
-      }  
+      chunk_copy[i] = chunk[i] * table->values[i];      
    } 
    for (i = 0; i < JPEG_CHUNK_NUM_SAMPLES; i++) {
       chunk[i] = chunk_copy[table->zigzag[i]];
@@ -136,14 +127,8 @@ void qtable_destroy(qtable *table) {
    free(table);
 }
 
-uint16_t qtable_get(qtable *table, unsigned int pos) {
-   uint16_t val;
+unsigned int qtable_get(qtable *table, unsigned int pos) {
    assert(table);
    assert(pos < JPEG_CHUNK_NUM_SAMPLES);
-   if (table->precision == QTABLE_PRECISION_8BIT) {
-     val = table->elements.values_8bit[pos];
-   } else {
-     val = table->elements.values_16bit[pos];
-   }
-   return val;
+   return table->values[pos];
 }

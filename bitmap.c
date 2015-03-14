@@ -1,4 +1,3 @@
-#include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
@@ -37,7 +36,7 @@
 
 /* Contains all elements of bitmap header, together with their
 * size in bytes */
-static const uint32_t bitmap_header[BITMAP_HEADER_SIZE][2] 
+static const unsigned long bitmap_header[BITMAP_HEADER_SIZE][2] 
                          = {{BITMAP_FILETYPE,      2}
                             /* File size */
                            ,{0,                    4}
@@ -46,7 +45,7 @@ static const uint32_t bitmap_header[BITMAP_HEADER_SIZE][2]
 
 /* Contains all elements of DIB header, together with their
 * size in bytes */
-static const uint32_t dib_header[DIB_HEADER_SIZE][2] 
+static const unsigned long dib_header[DIB_HEADER_SIZE][2] 
                          = {{DIB_NUM_BYTES,             4}
                            /* Width in pixels */
                            ,{0,                         4}
@@ -64,36 +63,36 @@ static const uint32_t dib_header[DIB_HEADER_SIZE][2]
 
 
 /* Padding so each row is a multiple of 4 bytes */
-static uint32_t get_num_padding_bytes(bitmap *b) {
+static unsigned long get_num_padding_bytes(bitmap *b) {
    assert(b);
-   return (4 - ((uint32_t) b->num_cols * BITMAP_BYTES_PER_PIXEL) % 4) % 4;
+   return (4 - ((unsigned long) b->num_cols * BITMAP_BYTES_PER_PIXEL) % 4) % 4;
 }
 
 /* Total number of bytes (3 for each pixel) 
  * plus padding for each row */
-static uint32_t get_pixel_array_size(bitmap *b) {
+static unsigned long get_pixel_array_size(bitmap *b) {
    assert(b);
-   return ((uint32_t) b->num_rows * (uint32_t) b->num_cols * BITMAP_BYTES_PER_PIXEL 
-           + (uint32_t) b->num_rows * get_num_padding_bytes(b));
+   return ((unsigned long) b->num_rows * (unsigned long) b->num_cols * BITMAP_BYTES_PER_PIXEL 
+           + (unsigned long) b->num_rows * get_num_padding_bytes(b));
 }
 
 /* Total number of bytes in the file */
-static uint32_t get_file_size(bitmap *b) {
+static unsigned long get_file_size(bitmap *b) {
    assert(b);
    return BITMAP_HEADER_TOTAL_BYTES + get_pixel_array_size(b);
 }
 
 static int can_fit_in_four_bytes(size_t n) {
-   return ((size_t) ((uint32_t) n) == n);
+   return ((size_t) ((unsigned long) n) == n);
 }
 
-static uint8_t clip(float f) {
+static unsigned int clip(float f) {
    if (f > 255.0f) {
       f = 255.0f;
    } else if (f < 0.0f) {
       f = 0.0f;
    }
-   return (uint8_t) f;
+   return (unsigned int) f;
 }
 
 int bitmap_write(bitmap *b, const char *filename) {
@@ -104,7 +103,7 @@ int bitmap_write(bitmap *b, const char *filename) {
       return (-1);
    }
    /* If the number of pixels in a row/column doesn't fit in four bytes,
-    * give up. We can then safely cast num_rows and num_cols to uint32_t. */
+    * give up. We can then safely cast num_rows and num_cols to unsigned long. */
    if (  !can_fit_in_four_bytes(b->num_cols) 
       || !can_fit_in_four_bytes(b->num_rows)) {
       return (-1);
@@ -115,7 +114,7 @@ int bitmap_write(bitmap *b, const char *filename) {
       return (-1);
    }
    for (i = 0; i < BITMAP_HEADER_SIZE; i++) {
-      uint32_t value = bitmap_header[i][BITMAP_HEADER_VALUE];
+      unsigned long value = bitmap_header[i][BITMAP_HEADER_VALUE];
       if (i == BITMAP_HEADER_FILE_SIZE_POS) {
          value = get_file_size(b);
       }
@@ -128,11 +127,11 @@ int bitmap_write(bitmap *b, const char *filename) {
    }
   
    for (i = 0; i < DIB_HEADER_SIZE; i++) {
-      uint32_t value = dib_header[i][BITMAP_HEADER_VALUE];
+      unsigned long value = dib_header[i][BITMAP_HEADER_VALUE];
       if (i == DIB_HEADER_HEIGHT_POS) {
-         value = (uint32_t) b->num_rows;
+         value = (unsigned long) b->num_rows;
       } else if (i == DIB_HEADER_WIDTH_POS) {
-         value = (uint32_t) b->num_cols;
+         value = (unsigned long) b->num_cols;
       } else if (i == DIB_HEADER_PIXEL_ARRAY_SIZE_POS) {
          value = get_pixel_array_size(b);
       }
@@ -149,7 +148,7 @@ int bitmap_write(bitmap *b, const char *filename) {
       for (j = 0; j < b->num_cols; j++) {
          size_t k;
          for (k = 0; k < BITMAP_NUM_CHANNELS; k++) {
-            uint8_t val = clip(b->samples[k][(b->num_rows - i - 1) * b->num_cols + j]);
+            unsigned int val = clip(b->samples[k][(b->num_rows - i - 1) * b->num_cols + j]);
             if (fwrite(&val, 1, 1, fp) != 1) {
                perror("Error writing to bitmap file");
                fclose(fp);

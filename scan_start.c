@@ -1,6 +1,5 @@
 #include <assert.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include "scan_start.h"
 #include "frame.h"
 #include "jpeg_segment.h"
@@ -21,7 +20,7 @@ scan_start *scan_start_create(const jpeg_segment *segment
                              ) {
    scan_start *s = NULL;
    size_t i = 0;
-   uint8_t num_components;
+   unsigned char num_components;
    assert(segment);
    if (segment->data_size < SCAN_START_HEADER_MIN_LENGTH_BYTES) {
       return NULL;
@@ -42,19 +41,19 @@ scan_start *scan_start_create(const jpeg_segment *segment
    }
    size_t n;
    for (n = 0; n < num_components; n++) {
-      uint8_t component_id = segment->data[i];
-      component *c         = frame_get_component_with_id(f, component_id);
+      component_id component_id = segment->data[i];
+      component *c = frame_get_component_with_id(f, component_id);
       i += 1;
       c->ac_htable_id =  segment->data[i]       & 0xF;
       c->dc_htable_id = (segment->data[i] >> 4) & 0xF;
       i += 1;
    }
-   s->spectral_selection_start =  segment->data[i];
+   s->spectral_selection_start = segment->data[i];
    i += 1;
-   s->spectral_selection_end   =  segment->data[i];
+   s->spectral_selection_end = segment->data[i];
    i += 1;
-   s->successive_approx_high   =  segment->data[i]       & 0xF;
-   s->successive_approx_low    = (segment->data[i] >> 4) & 0xF;
+   s->successive_approx_high =  segment->data[i]       & 0xF;
+   s->successive_approx_low  = (segment->data[i] >> 4) & 0xF;
    i += 1; 
    s->stream = jpeg_stream_create(file_bytes_remaining - i
                                  ,segment->data + segment->data_size
@@ -63,7 +62,9 @@ scan_start *scan_start_create(const jpeg_segment *segment
 }
 
 void scan_start_destroy(scan_start *s) {
-   jpeg_stream_destroy(s->stream);
-   free(s);
+   if (s != NULL) {
+      jpeg_stream_destroy(s->stream);
+      free(s);
+   }
 }
 

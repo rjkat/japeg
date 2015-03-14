@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <stdint.h>
 #include <stdio.h>
 #include "htree.h"
 
@@ -12,8 +11,8 @@ typedef struct hnode_s hnode;
 struct hnode_s {
    int is_leaf;
    union {
-      uint8_t code;
-      hnode  *children[HTREE_NUM_BRANCHES];
+      unsigned char code;
+      hnode *children[HTREE_NUM_BRANCHES];
    };
 };
 
@@ -23,7 +22,7 @@ struct htree_s {
    hnode *root;
 };
 
-static hnode *make_leaf_node(uint8_t code) {
+static hnode *make_leaf_node(unsigned char code) {
    hnode *new = calloc(1, sizeof(hnode));
    assert(new);
    new->is_leaf = 1;
@@ -37,7 +36,7 @@ static hnode *make_node(void) {
    return new;
 }
 
-static int htree_add_code(hnode *parent, size_t depth, size_t string_length, uint8_t code) {
+static int htree_add_code(hnode *parent, size_t depth, size_t string_length, unsigned char code) {
    /* If we have hit the end of the tree, return */
    if (parent == NULL || parent->is_leaf) {
       return 1;
@@ -75,7 +74,7 @@ static int htree_add_code(hnode *parent, size_t depth, size_t string_length, uin
    }
 }
 
-htree *htree_create(size_t max_string_bits, size_t code_bits, const size_t *num_codes, uint8_t **codes) {
+htree *htree_create(size_t max_string_bits, size_t code_bits, const size_t *num_codes, unsigned int **codes) {
    size_t string_length;
    int error = 0;
    htree *tree = malloc(sizeof(htree));
@@ -113,7 +112,7 @@ void htree_destroy(htree *tree) {
    }
 }
 
-int htree_get(const htree *tree, jpeg_stream *stream, uint8_t *code) {
+int htree_get(const htree *tree, jpeg_stream *stream, unsigned int *code) {
    size_t   current_byte = 0;
    int      move;
    int      done = 0;

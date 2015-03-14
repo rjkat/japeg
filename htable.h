@@ -1,9 +1,8 @@
 #ifndef HTABLE_H
 #define HTABLE_H
-#include <stdint.h>
 
 typedef struct htable_s htable;
-typedef uint8_t htable_id;
+typedef unsigned int htable_id;
 
 #include "frame.h"
 #include "jpeg_segment.h"
@@ -26,7 +25,7 @@ int     htable_create(const jpeg_segment *segment
 
 int     htable_decode(jpeg_stream  *stream
                      ,htable       *table
-                     ,int16_t      *result
+                     ,int          *result
                      ,size_t       *num_previous_zeros
                      );
 

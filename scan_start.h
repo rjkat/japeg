@@ -1,6 +1,5 @@
 #ifndef SCAN_H
 #define SCAN_H
-#include <stdint.h>
 #include <stdlib.h>
 
 typedef struct scan_start_s scan_start;
@@ -11,10 +10,10 @@ typedef struct scan_start_s scan_start;
 #include "frame.h"
 
 struct scan_start_s {
-   uint8_t      spectral_selection_start;
-   uint8_t      spectral_selection_end;
-   uint8_t      successive_approx_high;
-   uint8_t      successive_approx_low;
+   unsigned int spectral_selection_start;
+   unsigned int spectral_selection_end;
+   unsigned int successive_approx_high;
+   unsigned int successive_approx_low;
    jpeg_stream *stream;  
 };
 

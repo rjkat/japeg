@@ -9,14 +9,15 @@
 #define HTABLE_CODE_BITS             8
 #define HTABLE_MIN_LENGTH_BYTES     (HTABLE_METADATA_LENGTH_BYTES + HTABLE_MAX_STRING_BITS)
 
-static int16_t htable_read_bitstream_value(jpeg_stream *stream, size_t total_bits, htable_type type);
+static int htable_read_bitstream_value(jpeg_stream *stream, size_t total_bits, htable_type type);
 
 struct htable_s {
    htable_type type;
    htable_id   id;
    htree      *tree;
-   size_t      num_bit_codes[HTABLE_MAX_STRING_BITS];
-   uint8_t    *bit_codes[HTABLE_MAX_STRING_BITS];
+   
+   size_t        num_bit_codes[HTABLE_MAX_STRING_BITS];
+   unsigned int *bit_codes[HTABLE_MAX_STRING_BITS];
 };
 
 htable *htable_get_table(htable *const htables[JPEG_MAX_HTABLES]
@@ -34,7 +35,7 @@ htable *htable_get_table(htable *const htables[JPEG_MAX_HTABLES]
    return h;
 }
 
-htable *htable_create_internal(uint8_t *data
+htable *htable_create_internal(unsigned char *data
                               ,size_t  *bytes_remaining) {
    size_t   i = 0;
    htable  *table;
@@ -58,7 +59,7 @@ htable *htable_create_internal(uint8_t *data
    for (n = 0; n < HTABLE_MAX_STRING_BITS; n++) {
       table->num_bit_codes[n] = data[i];
       if (table->num_bit_codes[n] > 0) {
-         table->bit_codes[n] = malloc(table->num_bit_codes[n] * sizeof(uint8_t));
+         table->bit_codes[n] = malloc(table->num_bit_codes[n] * sizeof(*table->bit_codes[0]));
          assert(table->bit_codes[n]);
          total_code_bytes += table->num_bit_codes[n];
       } else {
@@ -121,7 +122,7 @@ void htable_destroy(htable *table) {
    }
 }
 
-static int16_t htable_read_bitstream_value(jpeg_stream *stream
+static int htable_read_bitstream_value(jpeg_stream *stream
                                           ,size_t total_bits
                                           ,htable_type type) {
    int32_t value = 0;
@@ -130,7 +131,7 @@ static int16_t htable_read_bitstream_value(jpeg_stream *stream
       value |= jpeg_stream_get_next_bit(stream) << (total_bits - bits_read - 1);
       bits_read += 1;
    }
-   int16_t result = (int16_t) value;
+   int result = (int) value;
    if (total_bits > 0 && !(value & (1 << (total_bits - 1)))) {
       result -= (1 << total_bits) - 1;
    }
@@ -139,11 +140,11 @@ static int16_t htable_read_bitstream_value(jpeg_stream *stream
 
 int htable_decode(jpeg_stream  *stream
                  ,htable       *table
-                 ,int16_t      *result
+                 ,int          *result
                  ,size_t       *num_previous_zeros
                  ) {
    int     status;
-   uint8_t code;
+   unsigned int code;
    *num_previous_zeros = 0;
    status = htree_get(table->tree
                      ,stream

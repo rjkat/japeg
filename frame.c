@@ -6,7 +6,7 @@
 #define FRAME_SUPPORTED_PRECISION_BITS 8
 #define COMPONENT_LENGTH_BYTES         3
 
-static void read_component(uint8_t *buf, component *c) {
+static void read_component(unsigned char *buf, component *c) {
    assert(c);
    assert(buf);
    c->id                         =  buf[0];

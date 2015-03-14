@@ -1,4 +1,3 @@
-#include <stdint.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>
@@ -11,9 +10,38 @@
 #include "scan_start.h"
 
 static float contribution(unsigned int bitmap_channel, component_id component, float value);
+
+typedef struct scale_s {
+   float factor;
+   float offset;
+} scale;
+
+static const scale y_to_rgb[BITMAP_NUM_CHANNELS]  
+                                    = {{ 1.0f,        0.0f}
+                                      ,{ 1.0f,        0.0f}
+                                      ,{ 1.0f,        0.0f}};
+static const scale cb_to_rgb[BITMAP_NUM_CHANNELS] 
+                                    = {{ 1.772f,   -128.0f}
+                                      ,{-0.34414f, -128.0f}
+                                      ,{ 0.0f,        0.0f}}; 
+static const scale cr_to_rgb[BITMAP_NUM_CHANNELS] 
+                                    = {{ 0.0f,        0.0f}
+                                      ,{-0.71414f, -128.0f}
+                                      ,{ 1.402f,   -128.0f}}; 
+
+static const scale *ycbcr_to_rgb[NUM_COMPONENTS] = {y_to_rgb, cb_to_rgb, cr_to_rgb};
+
+
+static float contribution(unsigned int bitmap_channel
+                         ,component_id component
+                         ,float        value) {
+   scale s = ycbcr_to_rgb[component - 1][bitmap_channel];
+   return (value + s.offset) * s.factor;
+} 
+
 static int read_data_unit(const jpeg *j
                          ,component *c
-                         ,int16_t chunk[JPEG_CHUNK_NUM_SAMPLES]);
+                         ,int chunk[JPEG_CHUNK_NUM_SAMPLES]);
 
 static int convert_mcu(const jpeg *j, bitmap *b, int restart, int row, int col);
 static void write_pixels_to_bitmap(float pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHUNK_SIDE_LENGTH]
@@ -25,10 +53,6 @@ static void write_pixels_to_bitmap(float pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHU
                                   ,unsigned int v
                                   ,bitmap *b);
 
-typedef struct scale_s {
-   float factor;
-   float offset;
-} scale;
 
 bitmap *jpeg_to_bitmap(const jpeg *j) {
    jpeg_stream *stream;
@@ -88,7 +112,7 @@ static int convert_mcu(const jpeg *j, bitmap *b, int restart, int row, int col) 
       for (v = 0; v < component->sampling_factor_vertical && !error; v++) {
          unsigned int h;
          for (h = 0; h < component->sampling_factor_horizontal && !error; h++) {
-            int16_t chunk[JPEG_CHUNK_NUM_SAMPLES];
+            int chunk[JPEG_CHUNK_NUM_SAMPLES];
             float   pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHUNK_SIDE_LENGTH];
             error = read_data_unit(j, component, chunk);
             if (!error) {
@@ -133,7 +157,7 @@ static void write_pixels_to_bitmap(float pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHU
 
 static int read_data_unit(const jpeg *j
                          ,component *c
-                         ,int16_t chunk[JPEG_CHUNK_NUM_SAMPLES]) {
+                         ,int chunk[JPEG_CHUNK_NUM_SAMPLES]) {
    int status;
    int error = 0;
    jpeg_stream *stream;
@@ -143,7 +167,7 @@ static int read_data_unit(const jpeg *j
    htable *table = htable_get_table(j->htables
                                    ,HTABLE_TYPE_DC
                                    ,c->dc_htable_id);
-   int16_t dc_delta = 0;
+   int dc_delta = 0;
    size_t sample = 0;
    status = htable_decode(stream, table, &dc_delta, &num_previous_zeros);
    if (status == HTABLE_OK || status == HTABLE_END_OF_BLOCK) {
@@ -153,7 +177,7 @@ static int read_data_unit(const jpeg *j
       /* Read AC coefficients */
       status = HTABLE_OK;
       while (status == HTABLE_OK && sample < JPEG_CHUNK_NUM_SAMPLES) {
-         int16_t ac_coeff;
+         int ac_coeff;
          num_previous_zeros = 0;
          table = htable_get_table(j->htables
                                  ,HTABLE_TYPE_AC
@@ -192,34 +216,4 @@ static int read_data_unit(const jpeg *j
    return error;
 }
 
-
-static float contribution(unsigned int bitmap_channel
-                         ,component_id component
-                         ,float value) {
-   scale s;   
-   scale scale_y[BITMAP_NUM_CHANNELS]  = {{ 1.0f,        0.0f}
-                                         ,{ 1.0f,        0.0f}
-                                         ,{ 1.0f,        0.0f}};
-   scale scale_cb[BITMAP_NUM_CHANNELS] = {{ 1.772f,   -128.0f}
-                                         ,{-0.34414f, -128.0f}
-                                         ,{ 0.0f,        0.0f}}; 
-   scale scale_cr[BITMAP_NUM_CHANNELS] = {{ 0.0f,        0.0f}
-                                         ,{-0.71414f, -128.0f}
-                                         ,{ 1.402f,   -128.0f}}; 
-   switch (component) {
-      case COMPONENT_ID_CB:
-         s = scale_cb[bitmap_channel];
-         break;
-      case COMPONENT_ID_CR:
-         s = scale_cr[bitmap_channel];
-         break;
-      case COMPONENT_ID_Y:
-         s = scale_y[bitmap_channel];
-         break;
-      default:
-      assert(0);
-      break;
-   }
-   return (value + s.offset) * s.factor;
-} 
 

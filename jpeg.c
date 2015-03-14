@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <assert.h>
 
 #include "bitmap_internal.h"
@@ -19,10 +18,9 @@ static jpeg_segment *read_next_segment(jpeg   *j
                                       ,size_t *offset);
 
 jpeg *jpeg_read(const char *filename) {
-   assert(sizeof(unsigned char) == sizeof(uint8_t));
    jpeg *j = malloc(sizeof(jpeg));
    assert(j);
-   j->data = (uint8_t *) read_file(filename, &j->data_size);
+   j->data = (unsigned char *) read_file(filename, &j->data_size);
    j->num_qtables = 0;
    j->num_htables = 0;
    unsigned int i;

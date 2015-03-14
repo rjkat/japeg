@@ -1,7 +1,6 @@
 #ifndef JPEG_SEGMENT_H
 #define JPEG_SEGMENT_H
 #include <stdlib.h>
-#include <stdint.h>
 
 #define JPEG_SEGMENT_SIZE_LENGTH_BYTES 2
 
@@ -22,16 +21,16 @@
 #define JPEG_MARKER_DRI                0xDD
 
 typedef struct jpeg_segment_s {
-   uint8_t     marker;
-   uint8_t    *data;
-   size_t      data_size;
+   unsigned char  marker;
+   unsigned char *data;
+   size_t         data_size;
 } jpeg_segment;
 
 /* Read a 2 byte word from a big-endian buffer */
-uint16_t      read_word(uint8_t *buf);
+unsigned int  read_word(unsigned char *buf);
 
-jpeg_segment *jpeg_segment_create(uint8_t  marker
-                                 ,uint8_t *data
+jpeg_segment *jpeg_segment_create(unsigned char  marker
+                                 ,unsigned char *data
                                  ,size_t   data_size);
 
 void          jpeg_segment_destroy(jpeg_segment *segment);

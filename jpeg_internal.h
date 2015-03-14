@@ -11,7 +11,6 @@
 #define JPEG_CHUNK_SIDE_LENGTH  8
 #define JPEG_CHUNK_NUM_SAMPLES (JPEG_CHUNK_SIDE_LENGTH * JPEG_CHUNK_SIDE_LENGTH)
 
-#include <stdint.h>
 #include "jpeg.h"
 #include "qtable.h"
 #include "htable.h"
@@ -19,16 +18,16 @@
 #include "scan_start.h"
 
 struct jpeg_s {
-   uint8_t    *data;
-   size_t      data_size;
+   unsigned char *data;
+   size_t         data_size;
 
-   qtable     *qtables[JPEG_MAX_QTABLES];
-   size_t      num_qtables;
+   qtable *qtables[JPEG_MAX_QTABLES];
+   size_t  num_qtables;
 
-   frame      *frame;
+   frame *frame;
 
-   htable     *htables[JPEG_MAX_HTABLES];
-   size_t      num_htables;
+   htable *htables[JPEG_MAX_HTABLES];
+   size_t  num_htables;
 
    scan_start *scan_start;
    int         has_restart_interval;

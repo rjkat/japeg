@@ -1,11 +1,11 @@
 #include "jpeg_segment.h"
 
-uint16_t read_word(uint8_t *buf) {
-   return (((uint16_t) buf[0]) << 8) + (uint16_t) buf[1]; 
+unsigned int read_word(unsigned char *buf) {
+   return (((unsigned int) buf[0]) << 8) + (unsigned int) buf[1]; 
 }
 
-jpeg_segment *jpeg_segment_create(uint8_t  marker
-                                 ,uint8_t *data
+jpeg_segment *jpeg_segment_create(unsigned char  marker
+                                 ,unsigned char *data
                                  ,size_t   data_size) {
    jpeg_segment *new = malloc(sizeof(jpeg_segment));
    if (!new) {

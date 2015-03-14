@@ -4,8 +4,8 @@
 #include <math.h>
 #include <stdio.h>
 
-void dct_inverse(int16_t chunk [JPEG_CHUNK_NUM_SAMPLES]
-                ,float   pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHUNK_SIDE_LENGTH]) {
+void dct_inverse(int   chunk [JPEG_CHUNK_NUM_SAMPLES]
+                ,float pixels[JPEG_CHUNK_SIDE_LENGTH][JPEG_CHUNK_SIDE_LENGTH]) {
    unsigned int x, y;
    /* Super naive and inefficient version for the moment */
    for (x = 0; x < JPEG_CHUNK_SIDE_LENGTH; x++) {
